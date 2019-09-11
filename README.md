@@ -8,4 +8,4 @@ None :)
 
 ## Release Notes
 
-See CHANGELOG.md for release notes.
+See [CHANGELOG.md](https://github.com/runarsf/vsfloof/blob/master/CHANGELOG.md) for release notes.
