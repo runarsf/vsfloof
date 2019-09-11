@@ -1,9 +1,9 @@
 {
 	"name": "floof",
-  "displayName": "floof",
-  "publisher": "runarsf",
+	"displayName": "floof",
+	"publisher": "runarsf",
 	"description": "Display random floof in VSCode.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.38.0"
 	},
@@ -19,11 +19,11 @@
 			{
 				"command": "extension.insertLink",
 				"title": "Floof: Insert random link at the beginning of file"
-      },
-      {
-        "command": "extension.renderWebview",
-        "title": "Floof: Open random floof image"
-      }
+			},
+			{
+				"command": "extension.renderWebview",
+				"title": "Floof: Open random floof image"
+			}
 		]
 	},
 	"scripts": {
@@ -39,15 +39,20 @@
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
 		"vscode-test": "^1.2.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/runarsf/vsfloof.git"
-  },
-  "author": "runarsf",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/runarsf/vsfloof/issues"
-  },
-  "homepage": "https://floof.runarsf.dev/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/runarsf/vsfloof.git"
+	},
+	"author": "runarsf",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/runarsf/vsfloof/issues"
+	},
+	"homepage": "https://floof.runarsf.dev/",
+	"__metadata": {
+		"id": "801c012d-2d69-4258-815d-1c5a4c9fa755",
+		"publisherDisplayName": "runarsf",
+		"publisherId": "107019cd-6582-4697-9c60-e5a9d0e6b5b1"
+	}
 }

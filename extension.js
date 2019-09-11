@@ -20,30 +20,46 @@ function activate(context) {
   // https://code.visualstudio.com/api/extension-guides/webview
   
   let insertLink = vscode.commands.registerCommand('extension.insertLink', function () {
-    getRandomLink.then(function (data) {
-      console.log(`Got floof link: ${data}`);
-      let textEditor = vscode.window.activeTextEditor;
-      textEditor.edit(edit => {
-        edit.insert(new vscode.Position(0, 0), data);
+    https.get('https://floof.runarsf.dev/random?type=json', (resp) => {
+      let data = '';
+
+      resp.on('data', (chunk) => {
+        data += chunk;
       });
-    }, error => {
-      console.error('onRejected function called: ' + error.message);
+
+      resp.on('end', () => {
+        console.log(`Got floof link: ${JSON.parse(data).url}`);
+        let textEditor = vscode.window.activeTextEditor;
+        textEditor.edit(edit => {
+          edit.insert(new vscode.Position(0, 0), JSON.parse(data).url);
+        });
+      }).on("error", (err) => {
+        console.error(err.message);
+      });
     });
   });
 
   let renderImage = vscode.commands.registerCommand('extension.renderWebview', function () {
-    getRandomLink.then(function (data) {
-      console.log(`Got floof link: ${data}`);
-      const panel = vscode.window.createWebviewPanel(
-        'floofImage',
-        'Floof',
-        vscode.ViewColumn.One,
-        {}
-      );
+    https.get('https://floof.runarsf.dev/random?type=json', (resp) => {
+      let data = '';
 
-      panel.webview.html = getWebviewContent(data);
-    }, error => {
-      console.error('onRejected function called: ' + error.message);
+      resp.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      resp.on('end', () => {
+        console.log(`Got floof link: ${JSON.parse(data).url}`);
+        const panel = vscode.window.createWebviewPanel(
+          'floofImage',
+          'Floof',
+          vscode.ViewColumn.One,
+          {}
+        );
+
+        panel.webview.html = getWebviewContent(JSON.parse(data).url);
+      });
+    }).on("error", (err) => {
+      console.error(err.message);
     });
   });
 
