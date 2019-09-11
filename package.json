@@ -1,6 +1,7 @@
 {
 	"name": "floof",
-	"displayName": "floof",
+  "displayName": "floof",
+  "publisher": "runarsf",
 	"description": "Display random floof in VSCode.",
 	"version": "0.0.1",
 	"engines": {
@@ -38,5 +39,15 @@
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
 		"vscode-test": "^1.2.0"
-	}
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runarsf/vsfloof.git"
+  },
+  "author": "runarsf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/runarsf/vsfloof/issues"
+  },
+  "homepage": "https://floof.runarsf.dev/"
 }
